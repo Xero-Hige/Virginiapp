@@ -15,4 +15,4 @@ def root():
 
 @app.route('/', methods=["POST"])
 def add():
-    return redirect("/")
+    return "Hola {}".format(request.json["name"])
