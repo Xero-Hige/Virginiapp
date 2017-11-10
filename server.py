@@ -16,7 +16,7 @@ def root():
 
 @app.route('/', methods=["POST"])
 def add():
-	with DB_Handler() as handler:
-		handler.add(request.form["name"])
-		
+    with DB_Handler() as handler:
+        handler.add(request.form["name"])
+
     return render_template("template.html")
