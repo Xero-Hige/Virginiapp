@@ -15,4 +15,4 @@ def root():
 
 @app.route('/', methods=["POST"])
 def add():
-    return "Hola {}".format(request.json["name"])
+    return "Hola {}".format(request.form["name"])
