@@ -1,6 +1,7 @@
 import os
 import random
 import re
+from db_handler import DB_Handler
 from subprocess import PIPE, Popen
 
 from flask import Flask, redirect, render_template, request
@@ -15,4 +16,7 @@ def root():
 
 @app.route('/', methods=["POST"])
 def add():
-    return "Hola {}".format(request.form["name"])
+	with DB_Handler() as handler:
+		handler.add(request.form["name"])
+		
+    return render_template("template.html")
