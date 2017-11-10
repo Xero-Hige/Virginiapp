@@ -18,5 +18,5 @@ def root():
 def add():
     with DB_Handler() as handler:
         handler.add(request.form["name"])
-
+		
     return render_template("template.html")

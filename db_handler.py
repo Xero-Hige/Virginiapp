@@ -45,8 +45,8 @@ class DB_Handler:
         self.session.close()
 
     def add(self, id):
-		tweet = TaggedTweet(id=id, totals=datetime.datetime.now())
-		self.session.add(tweet)
-		self.session.commit()
+        tweet = TaggedTweet(id=id, totals=datetime.datetime.now())
+        self.session.add(tweet)
+        self.session.commit()
 
         return tweet
